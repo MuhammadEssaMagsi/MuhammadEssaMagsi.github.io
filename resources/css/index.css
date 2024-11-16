@@ -1,0 +1,531 @@
+/* bg Settings Start*/
+:root {
+    --darkBg: #333;
+    --lightBg: #f0f0f0;
+    --lightColor: #fafafa;
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    color: var(--lightColor);
+    overflow-y: scroll;
+}
+
+body::before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        1000px circle at 80px 80px, rgb(222, 60, 114) 40%, purple 50%, rgb(9, 219, 219) 100%
+    );
+    z-index: -1;
+}
+/* bg Settings End*/
+/* Mouse Blob Start */
+#mouseBlob {
+    position: fixed;
+    /* width: 500px; */
+    width: 300px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    background-color: white;
+}
+/* Mouse Blob End */
+/* Header Start */
+header {
+    height: 70px;
+    width: 100%;
+    background-color: #00021fdd;
+    color: var(--lightColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(100px);
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+header .logo {
+    filter: invert();
+    width: 100px;
+}
+header .navigation .linkList .link {
+    display: inline-block;
+}
+header .navigation .linkList .link a{
+    color: var(--lightColor);
+    padding: 10px;
+    margin: 0 2px;
+    text-decoration:none;
+}
+header .navigation .linkList .link a:hover {
+    color: var(--lightBg);
+}
+
+header .getQuoteBtn {
+    background-color: var(--lightBg);
+    color: black;    
+    border: 1px solid var(--lightBg);
+    border-radius: 50px;
+    cursor: pointer;
+    outline:none;
+    padding: 10px 15px;
+    filter: drop-shadow(0px 2px 0px black);
+    transition: 0.15s ease-in-out all;
+}
+header .getQuoteBtn:hover {
+    background-color:#3333f0;
+    border: none;
+    color: var(--lightColor);
+}
+header .getQuoteBtn:active {
+    box-shadow: 1px 1px 3px inset black;
+}
+/* Header End */
+/* Body Start */
+main {
+    width: 100%;
+    height: 100%;
+    background-color: #00021fdd;
+    position: relative;
+    backdrop-filter: blur(50px);
+}
+/* Section */
+section {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    position: relative;
+    min-width: 350px;
+}
+#projectsSection {
+    border: 1px solid white;
+    height: 600px;
+    background-color: var(--lightBg);
+}
+/* Left Side */
+.leftSide {
+    width: calc(100% - 300px);
+    margin-left: 8%;
+
+}
+/* ---Intro--- */
+.leftSide .introduction {
+    width: 100%;
+    height: 50vh;
+    padding: 80px 80px;
+}
+.leftSide .introduction h2 {
+    font-size: 36px;
+}
+.leftSide .introduction h1 {
+    font-size: 48px;
+}
+.button1 {
+    background-color: #3333f0;
+    border: none;
+    border-radius: 20px;
+    color: var(--lightColor);
+    cursor: pointer;
+    outline:none;
+    padding: 10px 15px;
+    line-height: 12px;
+    margin-top: 20px;
+    position: relative;
+}
+.leftSide  hr {
+    background-color: var(--lightBg);
+    filter: blur(0.8px);
+    border-radius: 30px;
+    margin-top: 50px;
+}
+/* ---About--- */
+.leftSide .about {
+    padding: 30px 0 50px 0;
+    width: 100%;
+}
+.leftSide .about h2 {
+    font-size: 36px;
+}
+.leftSide .about p {
+    margin-top: 10px;
+    line-height: 24px;
+    text-align: justify;
+}
+.leftSide #devcard {
+    margin: 0 80px;
+    height: 285px;
+}
+.leftSide #devcard img{
+    width: 552px;
+}
+/* ---Projects---*/
+.leftSide .projects, .contact {
+    /* background-color: var(--lightBg); */
+    color: var(--darkBg);
+    margin-top: 80px;
+    padding: 20px 0 40px 0;
+    text-align: center;
+    width: 100%;
+}
+.leftSide .projects h4 {
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+.leftSide .projects .projectCards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+.leftSide .projects .projectCards .card{
+    width: 200px;
+    height: 110px;
+    background-color: #061634;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.leftSide .projects .projectCards .card img{
+    height: 100%;
+}
+/* ---Contact--- */
+.leftSide .contact {
+    background-color: transparent;
+    color: var(--lightColor)
+}
+.leftSide .contact .contactForm {
+    padding: 40px;
+}
+.leftSide .contact .contactForm form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.leftSide .contact .contactForm form label{
+    width: 300px;
+    text-align: left;
+}
+.leftSide .contact .contactForm form input, textarea, #formSubmitBtn{
+    background: var(--lightBg);
+    border: 1px inset var(--lightBg);
+    border-radius: 5px;
+    height: 40px;
+    outline: none;
+    padding: 10px;
+    width: 300px;
+}
+.leftSide form textarea {
+    height: 150px;
+    max-height: 150px;
+    min-height: 150px;
+    max-width: 300px;
+    min-width: 300px; 
+    resize: none;
+}
+.leftSide #formSubmitBtn {
+    cursor: pointer;
+    height: 40px;
+    padding: 5px;
+    transition: 0.2s linear all;
+}
+.leftSide #formSubmitBtn:hover {
+    background-color: #3333f0;
+    border: none;
+    color: white;
+}
+.leftSide #formSubmitBtn i{
+    position: relative;
+    transition: 0.2s linear all;
+}
+.leftSide #formSubmitBtn:hover i {
+    transform: translateX(10px);
+}
+/* Left Side End */
+
+/* Right Side Start */
+.rightSide {
+    margin-right: 8%;
+    display: flex;
+    flex-direction: column;
+    width: calc(300px + 8%);
+}
+.rightSide .person {
+    align-items: center;
+    color: var(--lightColor);
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.rightSide .person .photo {
+    border-radius: 10px;
+    outline: none;
+    width: 150px;
+    height: 180px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+}
+.rightSide .person .photo img {
+    width: 100%;
+}
+.rightSide .person h4{
+    margin-bottom: 10px;
+}
+.rightSide .person p{
+    font-weight: 500;
+}
+.rightSide div.sideCards {
+    margin-bottom: 10px;
+    width: 300px;
+    color: var(--lightColor);
+    padding-top: 10px;
+}
+.rightSide .sideCard{
+    align-items: center;
+    background-color: #070d28;
+    border-radius: 10px;
+    display: flex;
+    height: 180px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+}
+.rightSide .sideCard img{
+    width: 60%;
+}
+.rightSide #about .sideCard  {
+    flex-direction: column;
+    text-align: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 5px;
+}
+.rightSide #about .sideCard .icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+}
+.rightSide #experience .sideCard{
+    background-color: var(--lightBg);
+    color: var(--darkBg);
+    flex-direction: column;
+    gap: 30px;
+    height: auto;
+    justify-content: flex-start;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+    box-shadow: 3px 3px 5px var(--darkBg);
+    translate: 0 -60px;
+}
+.rightSide #experience .sideCard .job .tasksList{
+    text-align: left;
+    line-height: 24px;
+    padding: 2px 5px 20px 15px;
+}
+.rightSide #experience .sideCard .job .tasksList li{
+    cursor: pointer;
+}
+.rightSide #experience .sideCard .job .tasksList li:hover::marker{
+    color:#3333f0;
+}
+.rightSide #experience .sideCard .job .tasksList li i {
+    color:#3333f0;
+}
+/* Right Side End */
+
+
+
+/* Body End */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rightSide #contact {
+    margin-top: 20px;
+}
+.rightSide #contact .sideCard{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 10px;
+    font-size: 15px;
+    height: auto;
+    translate: 0 120px;
+}
+.rightSide #contact .sideCard h4 {
+    text-align: center;
+    width: 100%;
+}
+.rightSide #contact .sideCard p a{
+    color: white;
+    text-decoration: none;
+}
+/* Body End */
+
+/* Scroll to Top Start */
+.scrollToTop { 
+    background-color: #00021fdd;
+    border: none;
+    border-radius: 30px;
+    bottom: 20px;
+    color: var(--lightColor);
+    cursor: pointer;
+    display: none;
+    font-size: 18px;
+    height: 50px;
+    outline: none;
+    position: fixed;
+    right: 20px;
+    width: 50px;
+}
+/* Scroll to Top End */
+
+@media only screen and (max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+    header .navigation, header .getQuoteBtn {
+        display: none;
+    }
+    section {
+        flex-direction: column;
+    }
+    section .leftSide, section .rightSide {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .leftSide .introduction {
+        padding: 50px;
+    }
+    .leftSide .introduction h2 {
+        /* font-size: 24px; */
+        font-size: 5vw;
+    }
+    .leftSide .introduction h1 {
+        /* font-size: 32px; */
+        font-size: 7vw;
+    }
+    .leftSide .introduction button {
+        width: 100%;
+        border-radius: 0;
+    }
+    .leftSide hr {
+        width: 50%;
+    }
+    section#home .rightSide{
+        display: none;
+    }
+    .leftSide .about {
+        padding: 50px;
+    }
+    .leftSide #devcard {
+
+        margin: 0;
+    }
+    .leftSide #devcard img {
+        width: 100%;
+    }
+    .leftSide #projects {
+        margin: 0;
+        padding: 5%;
+    }
+    .rightSide {
+        padding: 30px;
+        background-color: #070d28;
+        text-align: center;
+    }
+    .rightSide #about {
+        width: 100%;
+    }
+    .rightSide #about .sideCard {
+        justify-content: start;
+        border-radius: 0;
+        height: fit-content;
+        background-color: transparent;
+    }
+    section#projectsSection {
+        height: fit-content;
+    }
+    section#projectsSection .leftSide .projects h4{
+        margin: 20px 0 30px 0;
+        font-size: 7vw;
+    }
+    section#projectsSection .leftSide .projects .projectCards {
+        padding: 20px 0px;
+        justify-content: center;
+    }
+    section#projectsSection .leftSide .projects .projectCards .card{
+        height: 220px;
+        width: 400px;
+    }
+
+    section#projectsSection .rightSide{
+        display: none;
+    }
+    section#contactSection {
+        height: fit-content;
+    } 
+    section#contactSection .rightSide{
+        padding: 0;
+    }
+
+    section#contactSection .rightSide #contact {
+        width: 100%;
+    }
+    section#contactSection .rightSide #contact .sideCard{
+        translate: 0;
+    }
+}
