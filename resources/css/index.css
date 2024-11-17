@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 /* bg Settings Start*/
 :root {
     --darkBg: #333;
     --lightBg: #f0f0f0;
     --lightColor: #fafafa;
     scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
 }
 body {
     width: 100%;
@@ -94,7 +96,8 @@ header .getQuoteBtn {
     transition: 0.15s ease-in-out all;
 }
 header .getQuoteBtn:hover {
-    background-color:#3333f0;
+    background-color:#1010D9;
+    /* #3333f0 */
     border: none;
     color: var(--lightColor);
 }
@@ -142,7 +145,7 @@ section {
     font-size: 48px;
 }
 .button1 {
-    background-color: #3333f0;
+    background-color: #1010D9;
     border: none;
     border-radius: 20px;
     color: var(--lightColor);
@@ -192,24 +195,78 @@ section {
     margin-bottom: 50px;
     margin-top: 30px;
 }
+/* General styles for project cards */
+
 .leftSide .projects .projectCards {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    gap: 30px;
+    gap: 20px;
     padding-bottom: 30px;
 }
+
 .leftSide .projects .projectCards .card{
-    width: 200px;
-    height: 110px;
     background-color: #061634;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    overflow: hidden;
     display: flex;
+    height: 110px;
     justify-content: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
 }
-.leftSide .projects .projectCards .card img{
+.card img {
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+/* meta deta of project card */
+.projectMeta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+/* Hover effect for showing metadata */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .projectMeta {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projectName {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.projectDate {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.projectLink {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.projectLink:hover {
+    color: #1010D9; /* Or any color you prefer */
 }
 /* ---Contact--- */
 .leftSide .contact {
@@ -254,7 +311,8 @@ section {
     transition: 0.2s linear all;
 }
 .leftSide #formSubmitBtn:hover {
-    background-color: #3333f0;
+    background-color: #1010D9; 
+    /* #3333f0 */
     border: none;
     color: white;
 }
@@ -273,6 +331,7 @@ section {
     display: flex;
     flex-direction: column;
     width: calc(300px + 8%);
+    font-family:system-ui, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .rightSide .person {
     align-items: center;
@@ -430,6 +489,42 @@ section {
 }
 /* Scroll to Top End */
 
+/* preloader starts */
+/* Basic preloader styling */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(255, 255, 255, 0.8);  Light background */
+    background-color: #00021fdd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;  /* Make sure it stays on top of everything */
+}
+
+/* Spinner animation */
+.spinner {
+    /* border: 8px solid #f3f3f3;  Light background for the spinner */
+    /* border-top: 8px solid #3498db;  Blue color for the spinner */
+    border: 8px solid #00021f;  
+    border-top: 8px solid var(--lightBg);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* preloader ends */
+/* Media Queries Start*/
 @media only screen and (max-width: 600px) {
     header {
         justify-content: center;
@@ -529,3 +624,11 @@ section {
         translate: 0;
     }
 }
+/* Media Queries End*/
+
+
+/* experimental */
+
+
+
+/* end of experimental cards metadata */
